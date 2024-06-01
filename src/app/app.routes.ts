@@ -5,9 +5,11 @@ import { DocentesListarComponent } from './modules/docentes/docentes-listar/doce
 import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
+    { path:'', pathMatch: 'full', redirectTo:'principal'},
     { 
         path: 'principal', component: MainLayoutComponent, children: [
-            { path: '', component: HomeComponent },
+            { path: '', pathMatch:'full', redirectTo:'inicio'},
+            { path: 'inicio', component: HomeComponent },
             { path: 'alumnos', component: AlumnosListarComponent },
             { path: 'docentes', component: DocentesListarComponent }
         ]
