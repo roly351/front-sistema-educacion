@@ -10,58 +10,60 @@ import { MenubarModule } from 'primeng/menubar';
   templateUrl: './menu-bar.component.html',
   styleUrl: './menu-bar.component.scss'
 })
-export class MenuBarComponent implements OnInit{
+export class MenuBarComponent implements OnInit {
 
   items: MenuItem[] | undefined;
 
   ngOnInit() {
     this.items = [
-      {
-          label: 'Home',
-          icon: 'pi pi-home'
-      },
-      {
-          label: 'Features',
-          icon: 'pi pi-star'
-      },
-      {
-          label: 'Projects',
-          icon: 'pi pi-search',
-          items: [
+        {
+            label: 'Personas',
+            icon: 'pi pi-users',
+            items: [
               {
-                  label: 'Components',
-                  icon: 'pi pi-bolt'
+                label: 'Alumnos',
+                icon: 'pi pi-graduation-cap'
               },
               {
-                  label: 'Blocks',
-                  icon: 'pi pi-server'
-              },
-              {
-                  label: 'UI Kit',
-                  icon: 'pi pi-pencil'
-              },
-              {
-                  label: 'Templates',
-                  icon: 'pi pi-palette',
-                  items: [
-                      {
-                          label: 'Apollo',
-                          icon: 'pi pi-palette'
-                      },
-                      {
-                          label: 'Ultima',
-                          icon: 'pi pi-palette'
-                      }
-                  ]
+                label: 'Docentes',
+                icon: 'pi pi-id-card'
               }
-          ]
-      },
-      {
-          label: 'Contact',
-          icon: 'pi pi-envelope'
-      }
-  ]
-  }
+            ]
+        },
+        {
+            label: 'Institucion',
+            icon: 'pi pi-briefcase',
+            items: [
+              {
+                label: 'Sedes',
+                icon: 'pi pi-building'
+              },
+              {
+                label: 'Cursos',
+                icon: 'pi pi-book'
+              },
+              {
+                label: 'Clases',
+                icon: 'pi pi-bookmark'
+              }
+            ]
+        },
+        {
+            label: 'Administrador',
+            icon: 'pi pi-cog',
+            items: [
+                {
+                    label: 'Usuarios',
+                    icon: 'pi pi-user'
+                },
+                {
+                    label: 'Bitacora',
+                    icon: 'pi pi-clipboard'
+                }
+            ]
+        }
+    ]
+}
 
 
 }

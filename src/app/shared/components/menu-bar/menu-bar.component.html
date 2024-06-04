@@ -1,3 +1,10 @@
 <div class="card">
-    <p-menubar [model]="items" />
+    <p-menubar [model]="items">
+        <ng-template pTemplate="start">
+            <img src="assets/img/logo_sdc.png" width="60px" style="border-radius: 10px;">
+        </ng-template>
+        <ng-template pTemplate="end">
+            
+        </ng-template>
+    </p-menubar>
 </div>
