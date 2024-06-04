@@ -1,7 +1,9 @@
 <div class="card">
     <p-menubar [model]="itemsMenuBar">
         <ng-template pTemplate="start">
-            <img src="assets/img/logo_sdc.png" width="60px" style="border-radius: 10px;">
+            <a href="/">
+                <img src="assets/img/logo_sdc.png" width="60px" style="border-radius: 10px;">
+            </a>
         </ng-template>
         <ng-template pTemplate="end">
             <p-menu #menubar [model]="itemsMenuBar" [popup]="true" />

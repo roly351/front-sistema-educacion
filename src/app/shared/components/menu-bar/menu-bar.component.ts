@@ -43,11 +43,13 @@ export class MenuBarComponent implements OnInit {
         items: [
           {
             label: 'Alumnos',
-            icon: 'pi pi-graduation-cap'
+            icon: 'pi pi-graduation-cap',
+            routerLink: '/principal/alumnos'
           },
           {
             label: 'Docentes',
-            icon: 'pi pi-id-card'
+            icon: 'pi pi-id-card',
+            routerLink: '/principal/docentes'
           }
         ]
       },
