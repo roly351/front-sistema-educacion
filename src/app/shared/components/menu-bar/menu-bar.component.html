@@ -1,10 +1,11 @@
 <div class="card">
-    <p-menubar [model]="items">
+    <p-menubar [model]="itemsMenuBar">
         <ng-template pTemplate="start">
             <img src="assets/img/logo_sdc.png" width="60px" style="border-radius: 10px;">
         </ng-template>
         <ng-template pTemplate="end">
-            
+            <p-menu #menubar [model]="itemsMenuBar" [popup]="true" />
+            <p-button (click)="menubar.toggle($event)"  icon="pi pi-user" [rounded]="true" label="Diego Baes" [text]="true" size="large" />
         </ng-template>
     </p-menubar>
 </div>
