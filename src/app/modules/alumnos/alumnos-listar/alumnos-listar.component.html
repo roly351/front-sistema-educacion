@@ -1,1 +1,39 @@
-<p>alumnos-listar works!, hola desde git</p>
+<p-table
+    [value]="alumnos"
+    [paginator]="true"
+    [rows]="5"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    [rowsPerPageOptions]="[5, 10, 20]"
+>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>ID</th>
+            <th>Código</th>
+            <th>Documento Identidad</th>
+            <th>Nombres</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Correo Institucional</th>
+            <!-- <th>Fecha Nacimiento</th>
+            <th>Sexo</th>
+            <th>Dirección</th> -->
+            <th></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-alumno>
+        <tr>
+            <td>{{ alumno.idAlumno }}</td>
+            <td>{{ alumno.codigo }}</td>
+            <td>{{ alumno.documentoIdentidad }}</td>
+            <td>{{ alumno.nombres }}</td>
+            <td>{{ alumno.apellidoPaterno }}</td>
+            <td>{{ alumno.apellidoMaterno }}</td>
+            <td>{{ alumno.correoInstitucional }}</td>
+            <td>
+                <p-button [style]="buttonStyle" icon="pi pi-eye" size="small" [rounded]="true" severity="info" />
+                <p-button [style]="buttonStyle"  icon="pi pi-pencil"  size="small" [rounded]="true" severity="warning" />
+                <p-button [style]="buttonStyle"  icon="pi pi-trash"  size="small" [rounded]="true" severity="danger" />
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
