@@ -68,7 +68,7 @@ export class AlumnosListarComponent {
     this.dialogService.open(AlumnosModalComponent,
       {
         header:'Crear un Alumno', 
-        width: '70vw',
+        width: '80vw',
         height: '80vh'
       }
     );
@@ -79,7 +79,7 @@ export class AlumnosListarComponent {
     this.dialogService.open(AlumnosModalComponent,
       {
         header:'Información de Alumno', 
-        width: '70vw',
+        width: '80vw',
         height: '80vh'
       }
     );
@@ -90,7 +90,7 @@ export class AlumnosListarComponent {
     this.dialogService.open(AlumnosModalComponent,
       {
         header:'Modificar al Alumno', 
-        width: '70vw',
+        width: '80vw',
         height: '80vh'
       }
     );
