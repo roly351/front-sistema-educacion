@@ -5,8 +5,10 @@ import { ButtonModule } from 'primeng/button';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
-import { DialogService } from 'primeng/dynamicdialog';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { AlumnosModalComponent } from '../alumnos-modal/alumnos-modal.component';
+import { FooterModalComponent } from '../../../shared/components/footer-modal/footer-modal.component';
+import { TYPE_MODAL_CREAR, TYPE_MODAL_EDITAR, TYPE_MODAL_VER } from '../../../shared/utils/constants';
 
 
 @Component({
@@ -27,6 +29,7 @@ export class AlumnosListarComponent {
 
   @ViewChild('tblAlumnosListar') tblAlumnosListar: Table | undefined;
 
+  ref: DynamicDialogRef | undefined;
 
   buttonStyle= {
     width: '2.3rem',
@@ -65,35 +68,69 @@ export class AlumnosListarComponent {
 
   onClickCrearAlumno(){
     console.log('onClickCrearAlumno');
-    this.dialogService.open(AlumnosModalComponent,
+    this.ref = this.dialogService.open(AlumnosModalComponent,
       {
         header:'Crear un Alumno', 
         width: '80vw',
-        height: '80vh'
+        height: '80vh',
+        templates:{
+          footer: FooterModalComponent
+        },
+        data: {
+          typeModal: TYPE_MODAL_CREAR,
+          data: undefined
+        }
       }
     );
+
+    this.ref.onClose.subscribe((data:any)=>{
+      console.log('SE HA CERRADO EL MODAL:',data);
+    })
   }
 
   onClickVerAlumno(alumno: IAlumno){
     console.log('onClickVerAlumno',alumno);
-    this.dialogService.open(AlumnosModalComponent,
+    this.ref = this.dialogService.open(AlumnosModalComponent,
       {
         header:'Información de Alumno', 
         width: '80vw',
-        height: '80vh'
+        height: '80vh',
+        templates:{
+          footer: FooterModalComponent
+        },
+        data: {
+          typeModal: TYPE_MODAL_VER,
+          data: alumno
+        }
       }
     );
+
+    this.ref.onClose.subscribe((data:any)=>{
+      console.log('SE HA CERRADO EL MODAL:',data);
+    })
   }
 
   onClickEditarAlumno(alumno: IAlumno){
     console.log('onClickEditarAlumno',alumno);
-    this.dialogService.open(AlumnosModalComponent,
+    this.ref = this.dialogService.open(AlumnosModalComponent,
       {
         header:'Modificar al Alumno', 
         width: '80vw',
-        height: '80vh'
+        height: '80vh',
+        templates:{
+          footer: FooterModalComponent
+        },
+        data: {
+          typeModal: TYPE_MODAL_EDITAR,
+          data: alumno
+        }
       }
     );
+
+    this.ref.onClose.subscribe((data:any)=>{
+      console.log('SE HA CERRADO EL MODAL:',data);
+    })
+
   }
 
   
