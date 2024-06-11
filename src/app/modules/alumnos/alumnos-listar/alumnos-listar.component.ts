@@ -9,6 +9,7 @@ import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { AlumnosModalComponent } from '../alumnos-modal/alumnos-modal.component';
 import { FooterModalComponent } from '../../../shared/components/footer-modal/footer-modal.component';
 import { TYPE_MODAL_CREAR, TYPE_MODAL_EDITAR, TYPE_MODAL_VER } from '../../../shared/utils/constants';
+import { HomeComponent } from '../../../pages/home/home.component';
 
 
 @Component({

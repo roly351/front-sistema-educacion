@@ -2,13 +2,13 @@
     <div class="grid">
         <div class="col-12 lg:col-6 mt-4">
             <p-floatLabel>
-                <input class="w-full" pInputText id="codigo" [(ngModel)]="alumno.codigo" />
+                <input [disabled]="isModoVer()" class="w-full" pInputText id="codigo" [(ngModel)]="alumno.codigo" />
                 <label for="codigo">Código Estudiante</label>
             </p-floatLabel>
         </div>  
         <div class="col-12 lg:col-6 mt-4">
             <p-floatLabel>
-                <input class="w-full" pInputText id="correoInstitucional" [(ngModel)]="alumno.correoInstitucional" />
+                <input [disabled]="isModoVer()" class="w-full" pInputText id="correoInstitucional" [(ngModel)]="alumno.correoInstitucional" />
                 <label for="correoInstitucional">Correo Institucional</label>
             </p-floatLabel>
         </div>
@@ -17,13 +17,13 @@
     <div class="grid">
         <div class="col-12 lg:col-6 mt-4">
             <p-floatLabel>
-                <input class="w-full" pInputText id="documentoIdentidad" [(ngModel)]="alumno.documentoIdentidad" />
+                <input [disabled]="isModoVer()" class="w-full" pInputText id="documentoIdentidad" [(ngModel)]="alumno.documentoIdentidad" />
                 <label for="documentoIdentidad">Documento Identidad</label>
             </p-floatLabel>
         </div>
         <div class="col-12 lg:col-6 mt-4">
             <p-floatLabel>
-                <input class="w-full" pInputText id="nombres" [(ngModel)]="alumno.nombres" />
+                <input [disabled]="isModoVer()" class="w-full" pInputText id="nombres" [(ngModel)]="alumno.nombres" />
                 <label for="nombres">Nombres</label>
             </p-floatLabel>
         </div>
@@ -32,13 +32,13 @@
     <div class="grid">
         <div class="col-12 lg:col-6 mt-4">
             <p-floatLabel>
-                <input class="w-full" pInputText id="apellidoPaterno" [(ngModel)]="alumno.apellidoPaterno" />
+                <input [disabled]="isModoVer()" class="w-full" pInputText id="apellidoPaterno" [(ngModel)]="alumno.apellidoPaterno" />
                 <label for="apellidoPaterno">Apellido Paterno</label>
             </p-floatLabel>
         </div>
         <div class="col-12 lg:col-6 mt-4">
             <p-floatLabel>
-                <input class="w-full" pInputText id="apellidoMaterno" [(ngModel)]="alumno.apellidoMaterno" />
+                <input [disabled]="isModoVer()" class="w-full" pInputText id="apellidoMaterno" [(ngModel)]="alumno.apellidoMaterno" />
                 <label for="apellidoMaterno">Apellido Materno</label>
             </p-floatLabel>
         </div>
@@ -47,13 +47,13 @@
     <div class="grid">
         <div class="col-12 lg:col-6 mt-4">
             <p-floatLabel>
-                <input class="w-full" pInputText id="fechaNacimiento" [(ngModel)]="alumno.fechaNacimiento" />
+                <input [disabled]="isModoVer()" class="w-full" pInputText id="fechaNacimiento" [(ngModel)]="alumno.fechaNacimiento" />
                 <label for="fechaNacimiento">Fecha Nacimiento</label>
             </p-floatLabel>
         </div>
         <div class="col-12 lg:col-6 mt-4">
             <p-floatLabel>
-                <input class="w-full" pInputText id="sexo" [(ngModel)]="alumno.sexo" />
+                <input [disabled]="isModoVer()" class="w-full" pInputText id="sexo" [(ngModel)]="alumno.sexo" />
                 <label for="sexo">Sexo</label>
             </p-floatLabel>
         </div>
@@ -62,7 +62,7 @@
     <div class="grid">
         <div class="col-12 lg:col-12 mt-4">
             <p-floatLabel>
-                <input class="w-full" pInputText id="direccion" [(ngModel)]="alumno.direccion" />
+                <input [disabled]="isModoVer()" class="w-full" pInputText id="direccion" [(ngModel)]="alumno.direccion" />
                 <label for="direccion">Dirección</label>
             </p-floatLabel>
         </div>

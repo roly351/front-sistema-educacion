@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { setTimeout } from 'timers/promises';
 import { IAlumno } from '../../../core/models/IAlumno';
+import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { TYPE_MODAL_VER } from '../../../shared/utils/constants';
 
 @Component({
   selector: 'app-alumnos-modal',
@@ -14,6 +16,12 @@ import { IAlumno } from '../../../core/models/IAlumno';
   styleUrl: './alumnos-modal.component.scss'
 })
 export class AlumnosModalComponent implements OnInit{
+
+  constructor(
+    private ref: DynamicDialogRef,
+    private config: DynamicDialogConfig
+  ){
+  }
 
 
   alumno: IAlumno = {
@@ -30,7 +38,14 @@ export class AlumnosModalComponent implements OnInit{
   };
 
   ngOnInit(): void {
-   
+   console.log('AlumnosModalComponent',this.config.data);
+   if(this.config.data.data){
+    this.alumno = this.config.data.data;
+   }
+  }
+
+  isModoVer():boolean{
+    return this.config.data.typeModal == TYPE_MODAL_VER
   }
 
 

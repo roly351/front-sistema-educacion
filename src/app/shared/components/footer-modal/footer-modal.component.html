@@ -1,3 +1,2 @@
-<p-button *ngIf="valorNumero > 15" severity="success" label="Guardar1"></p-button>
-<p-button [style]="{'display':'none'}" severity="success" label="Guardar2"></p-button>
+<p-button *ngIf="!isModoVer()" severity="success" label="Guardar"></p-button>
 <p-button (onClick)="cerrarModal()" severity="secondary" label="Cerrar"></p-button>   
