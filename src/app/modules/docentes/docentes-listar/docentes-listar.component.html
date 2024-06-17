@@ -1,1 +1,61 @@
-<p>docentes-listar works!</p>
+<p-table
+    #tblDocentesListar
+    [value]="docentes"
+    [paginator]="true"
+    [rows]="5"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    [globalFilterFields]="['idDocente', 'codigo', 'documentoIdentidad', 'nombres','apellidoPaterno','apellidoMaterno','correoInstitucional','especialidad']"
+    [rowsPerPageOptions]="[5, 10, 20]"
+>
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <p-button (onClick)="onClickCrearDocente()" label="Crear" icon="pi pi-plus" />
+            <p-iconField iconPosition="left" class="ml-auto">
+                <p-inputIcon>
+                    <i class="pi pi-search"></i>
+                </p-inputIcon>
+                <input 
+                    pInputText 
+                    type="text" 
+                    (input)="applyFilterGlobal($event,  'contains')" 
+                    placeholder="Barra de búsqueda" />
+            </p-iconField>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="idDocente">ID<p-sortIcon field="idAlumno" /></th>
+            <th pSortableColumn="codigo">Código<p-sortIcon field="codigo" /></th>
+            <th pSortableColumn="documentoIdentidad"> Documento Identidad<p-sortIcon field="documentoIdentidad" /></th>
+            <th pSortableColumn="nombres">Nombres<p-sortIcon field="nombres" /></th>
+            <th pSortableColumn="apellidoPaterno"> Apellido Paterno<p-sortIcon field="apellidoPaterno" /></th>
+            <th pSortableColumn="apellidoMaterno"> Apellido Materno<p-sortIcon field="apellidoMaterno" /></th>
+            <th pSortableColumn="correoInstitucional"> Correo Institucional<p-sortIcon field="correoInstitucional" />
+            <th pSortableColumn="especialidad"> Especialidad <p-sortIcon field="especialidad" />
+            </th>
+            <!-- <th>Fecha Nacimiento</th>
+            <th>Sexo</th>
+            <th>Dirección</th> -->
+            <th></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-docente>
+        <tr>
+            <td>{{ docente.idDocente }}</td>
+            <td>{{ docente.codigo }}</td>
+            <td>{{ docente.documentoIdentidad }}</td>
+            <td>{{ docente.nombres }}</td>
+            <td>{{ docente.apellidoPaterno }}</td>
+            <td>{{ docente.apellidoMaterno }}</td>
+            <td>{{ docente.correoInstitucional }}</td>
+            <td>{{ docente.especialidad }}</td>
+            <td>
+                <p-button (onClick) = "onClickVerDocente(docente)" [style]="" icon="pi pi-eye" size="small" [rounded]="true" severity="info" />
+                <p-button (onClick) = "onClickEditarDocente(docente)"[style]="" icon="pi pi-pencil" size="small" [rounded]="true" severity="warning" />
+                <p-button icon="pi pi-search" size="small" [rounded]="true" severity="danger" />
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+
